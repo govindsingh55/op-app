@@ -60,21 +60,19 @@ export function getInitLayoutConfig() {
       },
       fontFamily: "Poppins",
     },
-    // == Page Splash Screen loading
     loader: {
       enabled: true,
-      type: "", // default|spinner-message|spinner-logo
-      logo: toAbsoluteUrl("/media/logos/logo-dark-sm.png"),
+      type: "",
+      logo: "/metronic/react/demo1/media/logos/logo-dark-sm.png",
       message: "Please wait...",
     },
-    // page toolbar
     toolbar: {
       display: true,
     },
     header: {
       self: {
-        width: "fluid", // fixed|fluid
-        theme: "light", // light|dark
+        width: "fluid",
+        theme: "light",
         fixed: {
           desktop: true,
           mobile: true,
@@ -83,15 +81,15 @@ export function getInitLayoutConfig() {
       menu: {
         self: {
           display: true,
-          layout: "default", // tab/default
+          layout: "default",
           "root-arrow": false,
-          "icon-style": "duotone", // duotone, line, bold, solid
+          "icon-style": "duotone",
         },
         desktop: {
           arrow: true,
           toggle: "click",
           submenu: {
-            theme: "light", // light|dark
+            theme: "light",
             arrow: true,
           },
         },
@@ -109,27 +107,27 @@ export function getInitLayoutConfig() {
       displayDaterangepicker: true,
       layout: "subheader-v1",
       fixed: true,
-      width: "fluid", // fixed/fluid,
+      width: "fluid",
       clear: false,
-      style: "solid", // solid/transparent
+      style: "solid",
     },
     content: {
-      width: "fixed", // fluid|fixed
+      width: "fluid",
     },
     brand: {
       self: {
-        theme: "dark", // light/dark
+        theme: "dark",
       },
     },
     aside: {
       self: {
-        theme: "dark", // light/dark
+        theme: "dark",
         display: true,
         fixed: true,
         minimize: {
-          toggle: true, // allow toggle
-          default: false, // default state
-          hoverable: true, // allow hover
+          toggle: true,
+          default: false,
+          hoverable: true,
         },
       },
       footer: {
@@ -138,14 +136,14 @@ export function getInitLayoutConfig() {
         },
       },
       menu: {
-        dropdown: false, // ok
-        scroll: true, // ok
-        "icon-style": "duotone", // duotone, line, bold, solid
+        dropdown: false,
+        scroll: true,
+        "icon-style": "duotone",
         submenu: {
           accordion: true,
           dropdown: {
             arrow: true,
-            "hover-timeout": 500, // in milliseconds
+            "hover-timeout": 500,
           },
         },
       },
@@ -159,16 +157,16 @@ export function getInitLayoutConfig() {
     extras: {
       search: {
         display: true,
-        layout: "dropdown", // offcanvas, dropdown
+        layout: "dropdown",
         offcanvas: {
           direction: "right",
         },
       },
       notifications: {
         display: true,
-        layout: "dropdown", // offcanvas, dropdown
+        layout: "dropdown",
         dropdown: {
-          style: "dark", // light, dark
+          style: "dark",
         },
         offcanvas: {
           directions: "right",
@@ -176,9 +174,9 @@ export function getInitLayoutConfig() {
       },
       "quick-actions": {
         display: true,
-        layout: "dropdown", // offcanvas, dropdown,
+        layout: "dropdown",
         dropdown: {
-          style: "dark", // light, dark
+          style: "dark",
         },
         offcanvas: {
           directions: "right",
@@ -186,7 +184,7 @@ export function getInitLayoutConfig() {
       },
       user: {
         display: true,
-        layout: "dropdown", // offcanvas, dropdown
+        layout: "dropdown",
         dropdown: {
           style: "dark",
         },
@@ -200,7 +198,7 @@ export function getInitLayoutConfig() {
       cart: {
         display: true,
         dropdown: {
-          style: "dark", // ligth, dark
+          style: "dark",
         },
       },
       "quick-panel": {

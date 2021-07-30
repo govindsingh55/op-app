@@ -8,13 +8,13 @@ const theme = createMuiTheme(
   {
     // direction: "rtl",
     typography: {
-      fontFamily: ["Poppins"].join(",")
+      fontFamily: ["Montserrat", "sans-serif", "Noto Sans"].join(","),
     },
 
     palette: {
       primary: {
         // light: will be calculated from palette.primary.main,
-        main: "#17c191",
+        main: "#93b5a2",
         // dark: will be calculated from palette.primary.main,
         // contrastText: "#fff" //will be calculated to contrast with palette.primary.main
       },
@@ -26,10 +26,10 @@ const theme = createMuiTheme(
       },
       error: {
         // light: will be calculated from palette.primary.main,
-        main: "#f018a6",
+        main: "#e20c0c",
         // dark: will be calculated from palette.primary.main,
         // contrastText: "#fff" //will be calculated to contrast with palette.primary.main
-      }
+      },
     },
 
     /**
@@ -39,14 +39,14 @@ const theme = createMuiTheme(
       // Name of the component ⚛️
       MuiButtonBase: {
         // The properties to apply
-        disableRipple: false // No more ripple, on the whole application 💣!
+        disableRipple: false, // No more ripple, on the whole application 💣!
       },
 
       // Set default elevation to 1 for popovers.
       MuiPopover: {
-        elevation: 1
-      }
-    }
+        elevation: 1,
+      },
+    },
   }
 );
 
