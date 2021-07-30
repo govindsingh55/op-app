@@ -31,11 +31,11 @@ import Home from "./Home";
 const navList = [
   {
     title: "Login",
-    href: "/app/login",
+    href: "/auth/login",
   },
   {
     title: "Signup",
-    href: "/app/signup",
+    href: "/auth/registration",
   },
   {
     title: "FAQs",
@@ -168,7 +168,7 @@ export function AuthPage() {
       {/*begin::Content*/}
       <div className="d-flex flex-column flex-row-fluid">
         {/* begin::Content body */}
-        <div className="d-flex flex-column-fluid flex-center">
+        <div className="d-flex   flex-column-fluid flex-center">
           <Switch>
             <ContentRoute path="/auth/login" component={Login} />
             <ContentRoute path="/" component={Home} />

@@ -20,7 +20,7 @@ export default function Home() {
   }
   return (
     <>
-      <div style={{ display: "flex", flexDirection: "column" }}>
+      <div style={{ display: "flex", flexDirection: "column", flexGrow: "1" }}>
         <Banner />
         <div style={{ margin: "12vh 0px" }}>
           <Login />
