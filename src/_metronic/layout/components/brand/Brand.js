@@ -24,28 +24,36 @@ export function Brand() {
     <>
       {/* begin::Brand */}
       <div
-          className={`brand flex-column-auto ${layoutProps.brandClasses}`}
-          id="kt_brand"
+        className={`brand flex-column-auto ${layoutProps.brandClasses}`}
+        id="kt_brand"
       >
         {/* begin::Logo */}
         <Link to="" className="brand-logo">
-          <img alt="logo" src={layoutProps.headerLogo}/>
+          {/* <img alt="logo" src={layoutProps.headerLogo}/> */}
+          <div style={{ color: "#fff", fontSize: "2rem" }}>Our Planet</div>
         </Link>
         {/* end::Logo */}
 
         {layoutProps.asideSelfMinimizeToggle && (
           <>
             {/* begin::Toggle */}
-            <button className="brand-toggle btn btn-sm px-0" id="kt_aside_toggle">
+            <button
+              className="brand-toggle btn btn-sm px-0"
+              id="kt_aside_toggle"
+            >
               <span className="svg-icon svg-icon-xl">
-                  <SVG src={toAbsoluteUrl("/media/svg/icons/Navigation/Angle-double-left.svg")}/>
+                <SVG
+                  src={toAbsoluteUrl(
+                    "/media/svg/icons/Navigation/Angle-double-left.svg"
+                  )}
+                />
               </span>
             </button>
             {/* end::Toolbar */}
-            </>
+          </>
         )}
       </div>
       {/* end::Brand */}
-      </>
+    </>
   );
 }

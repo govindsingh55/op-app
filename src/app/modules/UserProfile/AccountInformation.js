@@ -12,6 +12,7 @@ function AccountInformation(props) {
   const [loading, setloading] = useState(false);
   const dispatch = useDispatch();
   const user = useSelector((state) => state.auth.user, shallowEqual);
+  console.log("user : ", user);
   useEffect(() => {}, [user]);
 
   // Methods
@@ -47,13 +48,16 @@ function AccountInformation(props) {
   };
   // UI Helpers
   const initialValues = {
-    username: user.username,
+    username: user.userName,
     email: user.email,
     language: user.language,
     timeZone: user.timeZone,
-    communicationEmail: user.communication.email,
-    communicationSMS: user.communication.sms,
-    communicationPhone: user.communication.phone,
+    // communicationEmail: user.communication.email,
+    // communicationSMS: user.communication.sms,
+    // communicationPhone: user.communication.phone,
+    communicationEmail: true,
+    communicationSMS: true,
+    communicationPhone: true,
   };
   const Schema = Yup.object().shape({
     username: Yup.string().required("Username is required"),

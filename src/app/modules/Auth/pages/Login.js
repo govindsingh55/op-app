@@ -65,12 +65,14 @@ function Login(props) {
             disableLoading();
           }
         )
-        .catch(() => {
-          setStatus(
-            intl.formatMessage({
-              id: "AUTH.VALIDATION.INVALID_LOGIN",
-            })
-          );
+        .catch((err) => {
+          if (err.response && err.response.status === 400) {
+            setStatus("Registration details are incorrect!");
+          } else if (err.request) {
+            setStatus("Network issues!");
+          } else {
+            setStatus("Something went wrong!");
+          }
         })
         .finally(() => {
           disableLoading();

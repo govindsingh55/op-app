@@ -27,6 +27,7 @@ import {
   Grid,
 } from "@material-ui/core";
 import Home from "./Home";
+import Verify from "./Verify";
 
 const navList = [
   {
@@ -170,8 +171,9 @@ export function AuthPage() {
         {/* begin::Content body */}
         <div className="d-flex   flex-column-fluid flex-center">
           <Switch>
+            <ContentRoute path="/" exact component={Home} />
+            <ContentRoute path="/auth/verify" component={Verify} />
             <ContentRoute path="/auth/login" component={Login} />
-            <ContentRoute path="/" component={Home} />
             <ContentRoute path="/auth/registration" component={Registration} />
             <ContentRoute
               path="/auth/forgot-password"
@@ -194,65 +196,100 @@ function Footer() {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Box className={classes.footerRoot}>
+        <Box className={classes.footerRoot} style={{ padding: "10px 0px" }}>
           <Grid container>
-            <Grid item xs={12} md={6}>
-              <Typography variant="h4" gutterBottom>
-                Our Planet
-              </Typography>
-              <Typography variant="body2" style={{ fontStyle: "italic" }}>
-                Qui repudiandae et eum dolores alias sed ea. Qui suscipit veniam
-                excepturi quod.
-              </Typography>
-              <br />
-              <Typography className={classes.pos} variant="body2">
-                A108 Adam Street
-                <br />
-                NY 535022, USA
-              </Typography>
-              <br />
-              <Typography variant="body2" component="p">
-                <strong>Phone:</strong> +1 5589 55488 55
-                <br />
-                <strong>Email:</strong> info@example.com
-              </Typography>
-              <Box style={{ margin: "20px 0px" }}>
-                © Copyright{" "}
-                <strong>
-                  <span>Our Planet</span>
-                </strong>
-                . All Rights Reserved
-              </Box>
+            <Grid item xs={12} md={4}>
+              <div>
+                <img
+                  src={toAbsoluteUrl(
+                    "/media/logos/Our-Planet-Logo-Icon-WHITE-SMALLER-150x150.png"
+                  )}
+                  alt="logo"
+                />
+              </div>
             </Grid>
-            <Grid item xs={12} md={6}>
-              <Typography variant="h4" gutterBottom>
-                Links
-              </Typography>
-              <br />
-              <Link
-                style={{ color: "inherit", fontSize: "1.2rem" }}
-                href="https://www.our-planet.co.uk"
+            <Grid item xs={12} md={4}>
+              <ul
+                style={{
+                  listStyle: "none",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "right",
+                }}
               >
-                About Our Planet
-              </Link>
-              <br />
-              <br />
-              <Link
-                style={{ color: "inherit", fontSize: "1.2rem" }}
-                href="https://www.our-planet.co.uk/privacy-policy/"
-              >
-                Privacy Policy
-              </Link>
-              <br />
-              <br />
-              <Link
-                style={{ color: "inherit", fontSize: "1.2rem" }}
-                href="/terms"
-              >
-                Terms &amp; Conditions
-              </Link>
-              <br />
-              <br />
+                <li
+                  style={{
+                    display: "flex",
+                  }}
+                >
+                  <a
+                    style={{
+                      color: "#fff",
+                      fontSize: "1.5rem",
+                      textAlign: "left",
+                    }}
+                    href="/"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li
+                  style={{
+                    display: "flex",
+                  }}
+                >
+                  <a
+                    style={{
+                      color: "#fff",
+                      fontSize: "1.5rem",
+                      textAlign: "left",
+                    }}
+                    href="https://www.our-planet.co.uk/why-us/"
+                  >
+                    Why us
+                  </a>
+                </li>
+                <li
+                  style={{
+                    display: "flex",
+                  }}
+                >
+                  <a
+                    style={{
+                      color: "#fff",
+                      fontSize: "1.5rem",
+                      textAlign: "left",
+                    }}
+                    href="https://www.our-planet.co.uk/team/"
+                  >
+                    Team
+                  </a>
+                </li>
+                <li
+                  style={{
+                    display: "flex",
+                  }}
+                >
+                  <a
+                    style={{
+                      color: "#fff",
+                      fontSize: "1.5rem",
+                      textAlign: "left",
+                    }}
+                    href="https://www.our-planet.co.uk/privacy-policy/"
+                  >
+                    Privacy policy
+                  </a>
+                </li>
+              </ul>
+            </Grid>
+            <Grid item xs={12} md={4} style={{ fontSize: "1.5rem" }}>
+              <div>Our Planet Ltd</div>
+              <div>Suit 143</div>
+              <div>295 High Rd</div>
+              <div>Chiswick</div>
+              <div>London</div>
+              <div>W4 4HH</div>
             </Grid>
           </Grid>
         </Box>

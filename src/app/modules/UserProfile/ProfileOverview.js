@@ -11,9 +11,9 @@ export function ProfileOverview() {
       <div className="col-lg-6">
         <ListsWidget10 className="card-stretch gutter-b"></ListsWidget10>
       </div>
-      <div className="col-lg-12">
+      {/* <div className="col-lg-12">
         <AdvanceTablesWidget7 className="card-stretch gutter-b"></AdvanceTablesWidget7>
-      </div>
+      </div> */}
     </div>
   );
 }

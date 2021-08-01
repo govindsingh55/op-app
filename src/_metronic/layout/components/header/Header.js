@@ -29,7 +29,9 @@ export function Header() {
         {...layoutProps.headerAttributes}
       >
         {/*begin::Container*/}
-        <div className={` ${layoutProps.headerContainerClasses} d-flex align-items-stretch justify-content-between`}>
+        <div
+          className={` ${layoutProps.headerContainerClasses} d-flex align-items-stretch justify-content-between`}
+        >
           <AnimateLoading />
           {/*begin::Header Menu Wrapper*/}
           {layoutProps.menuHeaderDisplay && <HeaderMenuWrapper />}

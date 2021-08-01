@@ -47,36 +47,36 @@ export function ProfileCard() {
               {/* begin::User */}
               <div className="d-flex align-items-center">
                 <div className="symbol symbol-60 symbol-xxl-100 mr-5 align-self-start align-self-xxl-center">
-                  <div
-                    className="symbol-label"
-                    style={{ backgroundImage: `url(${user.pic})` }}
-                  ></div>
+                  {user.pic ? (
+                    <div
+                      className="symbol-label"
+                      style={{ backgroundImage: `url(${user.pic})` }}
+                    ></div>
+                  ) : (
+                    <div
+                      className="symbol-label"
+                      style={{ fontSize: "1.8rem" }}
+                    >
+                      {user.firstName ? user.firstName[0].toUpperCase() : "A"}
+                    </div>
+                  )}
                   {/* style="background-i
                   mage:url('/metronic/theme/html/demo1/dist/assets/media/users/300_21.jpg')" */}
-                  <i className="symbol-badge bg-success"></i>
+                  {/* <i className="symbol-badge bg-success"></i> */}
                 </div>
                 <div>
                   <a
                     href="#"
                     className="font-weight-bolder font-size-h5 text-dark-75 text-hover-primary"
                   >
-                    {user.firstname} {user.lastname}
+                    {user.firstName} {user.lastName}
                   </a>
                   <div className="text-muted">{user.occupation}</div>
-                  <div className="mt-2">
-                    <a
-                      href="#"
-                      className="btn btn-sm btn-primary font-weight-bold mr-2 py-2 px-3 px-xxl-5 my-1"
-                    >
-                      Chat
-                    </a>
-                    <a
-                      href="#"
-                      className="btn btn-sm btn-success font-weight-bold py-2 px-3 px-xxl-5 my-1"
-                    >
-                      Follow
-                    </a>
-                  </div>
+                  {/* <div className="mt-2">
+                    <div>
+                      {user.firstName} {user.lastName}
+                    </div>
+                  </div> */}
                 </div>
               </div>
               {/* end::User */}
@@ -89,12 +89,12 @@ export function ProfileCard() {
                   </span>
                 </div>
                 <div className="d-flex align-items-center justify-content-between mb-2">
-                  <span className="font-weight-bold mr-2">Phone:</span>
-                  <span className="text-muted">{user.phone}</span>
+                  <span className="font-weight-bold mr-2">Company:</span>
+                  <span className="text-muted">{user.company.companyName}</span>
                 </div>
                 <div className="d-flex align-items-center justify-content-between">
                   <span className="font-weight-bold mr-2">Location:</span>
-                  <span className="text-muted">{user.address.city}</span>
+                  <span className="text-muted">{user.city}</span>
                 </div>
               </div>
               {/* end::Contact */}
@@ -141,51 +141,62 @@ export function ProfileCard() {
                   </NavLink>
                 </div>
                 <div className="navi-item mb-2">
-                  <NavLink
-                    to="/user-profile/account-information"
-                    className="navi-link py-4"
-                    activeClassName="active"
+                  <OverlayTrigger
+                    placement="right"
+                    overlay={<Tooltip>Coming soon...</Tooltip>}
                   >
-                    <span className="navi-icon mr-2">
-                      <span className="svg-icon">
-                        <SVG
-                          src={toAbsoluteUrl(
-                            "/media/svg/icons/Code/Compiling.svg"
-                          )}
-                        ></SVG>{" "}
+                    <a
+                      to="#"
+                      className="navi-link py-4"
+                      activeClassName="active"
+                    >
+                      <span className="navi-icon mr-2">
+                        <span className="svg-icon">
+                          <SVG
+                            src={toAbsoluteUrl(
+                              "/media/svg/icons/Code/Compiling.svg"
+                            )}
+                          ></SVG>{" "}
+                        </span>
                       </span>
-                    </span>
-                    <span className="navi-text font-size-lg">
-                      Account Information
-                    </span>
-                  </NavLink>
+                      <span className="navi-text font-size-lg">
+                        Account Information
+                      </span>
+                    </a>
+                  </OverlayTrigger>
                 </div>
                 <div className="navi-item mb-2">
-                  <NavLink
-                    to="/user-profile/change-password"
-                    className="navi-link py-4"
-                    activeClassName="active"
+                  <OverlayTrigger
+                    placement="right"
+                    overlay={<Tooltip>Coming soon...</Tooltip>}
                   >
-                    <span className="navi-icon mr-2">
-                      <span className="svg-icon">
-                        <SVG
-                          src={toAbsoluteUrl(
-                            "/media/svg/icons/Communication/Shield-user.svg"
-                          )}
-                        ></SVG>{" "}
+                    <a
+                      to="#"
+                      className="navi-link py-4"
+                      activeClassName="active"
+                    >
+                      <span className="navi-icon mr-2">
+                        <span className="svg-icon">
+                          <SVG
+                            src={toAbsoluteUrl(
+                              "/media/svg/icons/Communication/Shield-user.svg"
+                            )}
+                          ></SVG>{" "}
+                        </span>
                       </span>
-                    </span>
-                    <span className="navi-text font-size-lg">
-                      Change Password
-                    </span>
-                    <span className="navi-label">
-                      <span className="label label-light-danger label-rounded font-weight-bold">
-                        5
+                      <span className="navi-text font-size-lg">
+                        Change Password
                       </span>
-                    </span>
-                  </NavLink>
+                      <span className="navi-label">
+                        <span className="label label-light-danger label-rounded font-weight-bold">
+                          5
+                        </span>
+                      </span>
+                    </a>
+                  </OverlayTrigger>
                 </div>
-                <div className="navi-item mb-2">
+
+                {/* <div className="navi-item mb-2">
                   <NavLink
                     to="/user-profile/email-settings"
                     className="navi-link py-4"
@@ -204,8 +215,8 @@ export function ProfileCard() {
                       Email settings
                     </span>
                   </NavLink>
-                </div>
-                <div className="navi-item mb-2">
+                </div> */}
+                {/* <div className="navi-item mb-2">
                   <OverlayTrigger
                     placement="right"
                     overlay={<Tooltip>Coming soon...</Tooltip>}
@@ -225,8 +236,8 @@ export function ProfileCard() {
                       </span>
                     </a>
                   </OverlayTrigger>
-                </div>
-                <div className="navi-item mb-2">
+                </div> */}
+                {/* <div className="navi-item mb-2">
                   <OverlayTrigger
                     placement="right"
                     overlay={<Tooltip>Coming soon...</Tooltip>}
@@ -251,8 +262,8 @@ export function ProfileCard() {
                       </span>
                     </a>
                   </OverlayTrigger>
-                </div>
-                <div className="navi-item mb-2">
+                </div> */}
+                {/* <div className="navi-item mb-2">
                   <OverlayTrigger
                     placement="right"
                     overlay={<Tooltip>Coming soon...</Tooltip>}
@@ -270,7 +281,7 @@ export function ProfileCard() {
                       <span className="navi-text">Statements</span>
                     </a>
                   </OverlayTrigger>
-                </div>
+                </div> */}
               </div>
               {/* end::Nav */}
             </div>

@@ -21,30 +21,35 @@ export function Aside() {
   }, [uiService]);
 
   return (
-      <>
-        {/* begin::Aside */}
-        <div id="kt_aside"
-             className={`aside aside-left  ${layoutProps.asideClassesFromConfig} d-flex flex-column flex-row-auto`}>
-          <Brand/>
+    <>
+      {/* begin::Aside */}
+      <div
+        id="kt_aside"
+        className={`aside aside-left  ${layoutProps.asideClassesFromConfig} d-flex flex-column flex-row-auto`}
+      >
+        <Brand />
 
-          {/* begin::Aside Menu */}
-          <div id="kt_aside_menu_wrapper" className="aside-menu-wrapper flex-column-fluid">
-            {layoutProps.disableAsideSelfDisplay && (
-              <>
-                {/* begin::Header Logo */}
-                <div className="header-logo">
-                  <Link to="">
-                    <img alt="logo" src={layoutProps.headerLogo}/>
-                  </Link>
-                </div>
-                {/* end::Header Logo */}
-              </>
-            )}
-            <AsideMenu disableScroll={layoutProps.disableScroll}/>
-          </div>
-          {/* end::Aside Menu */}
+        {/* begin::Aside Menu */}
+        <div
+          id="kt_aside_menu_wrapper"
+          className="aside-menu-wrapper flex-column-fluid"
+        >
+          {layoutProps.disableAsideSelfDisplay && (
+            <>
+              {/* begin::Header Logo */}
+              <div className="header-logo">
+                <Link to="/dashboard">
+                  <img alt="logo" src={layoutProps.headerLogo} />
+                </Link>
+              </div>
+              {/* end::Header Logo */}
+            </>
+          )}
+          <AsideMenu disableScroll={layoutProps.disableScroll} />
         </div>
-        {/* end::Aside */}
-      </>
+        {/* end::Aside Menu */}
+      </div>
+      {/* end::Aside */}
+    </>
   );
 }

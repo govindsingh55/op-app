@@ -42,9 +42,9 @@ function PersonaInformation(props) {
   // UI Helpers
   const initialValues = {
     pic: user.pic,
-    firstname: user.firstname,
-    lastname: user.lastname,
-    companyName: user.companyName,
+    firstname: user.firstName,
+    lastname: user.lastName,
+    companyName: user.company?.companyName,
     phone: user.phone,
     email: user.email,
     website: user.website,
@@ -150,11 +150,22 @@ function PersonaInformation(props) {
                   )}`,
                 }}
               >
-                <div
-                  className="image-input-wrapper"
-                  style={{ backgroundImage: `${getUserPic()}` }}
-                />
-                <label
+                {pic ? (
+                  <div
+                    className="image-input-wrapper"
+                    style={{ backgroundImage: `${getUserPic()}` }}
+                  />
+                ) : (
+                  <div className="symbol symbol-60 symbol-xxl-100">
+                    <div
+                      className="symbol-label"
+                      style={{ fontSize: "1.8rem" }}
+                    >
+                      {user.firstName[0].toUpperCase()}
+                    </div>
+                  </div>
+                )}
+                {/* <label
                   className="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
                   data-action="change"
                   data-toggle="tooltip"
@@ -169,8 +180,8 @@ function PersonaInformation(props) {
                     // {...formik.getFieldProps("pic")}
                   />
                   <input type="hidden" name="profile_avatar_remove" />
-                </label>
-                <span
+                </label> */}
+                {/* <span
                   className="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
                   data-action="cancel"
                   data-toggle="tooltip"
@@ -188,7 +199,7 @@ function PersonaInformation(props) {
                   data-original-title="Remove avatar"
                 >
                   <i className="ki ki-bold-close icon-xs text-muted"></i>
-                </span>
+                </span> */}
               </div>
               <span className="form-text text-muted">
                 Allowed file types: png, jpg, jpeg.
@@ -318,7 +329,7 @@ function PersonaInformation(props) {
               ) : null}
             </div>
           </div>
-          <div className="form-group row">
+          {/* <div className="form-group row">
             <label className="col-xl-3 col-lg-3 col-form-label">
               Company Site
             </label>
@@ -338,7 +349,7 @@ function PersonaInformation(props) {
                 </div>
               ) : null}
             </div>
-          </div>
+          </div> */}
         </div>
         {/* end::Body */}
       </div>

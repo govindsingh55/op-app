@@ -278,6 +278,14 @@ function Registration(props) {
     onSubmit: (values, { setStatus, setSubmitting }) => {
       setSubmitting(true);
       enableLoading();
+      let cpref = [];
+      if (values["communicationPref.phone"]) cpref.push("phone");
+      if (values["communicationPref.email"]) cpref.push("email");
+      if (values["communicationPref.newsLetter"]) cpref.push("newsLetter");
+      if (values["communicationPref.importantUpdates"])
+        cpref.push("importantUpdates");
+      if (values["communicationPref.marketingUpdates"])
+        cpref.push("marketingUpdates");
       const data = {
         userName: values.userName,
         firstName: values.firstName,
@@ -305,33 +313,31 @@ function Registration(props) {
         roleInCompany: values.roleInCompany,
         businessPhone: values.businessPhone,
         businessEmail: values.businessEmail,
-        communicationPref: [
-          values["communicationPref.phone"],
-          values["communicationPref.email"],
-          values["communicationPref.newsLetter"],
-          values["communicationPref.importantUpdates"],
-          values["communicationPref.marketingUpdates"],
-        ].join(","),
+        communicationPref: cpref.join(","),
       };
       register(data)
         .then(() => {
-          console.log("register success!");
-          handleFormStepChannge('next')
+          // console.log("register success!");
+          handleFormStepChannge("next");
           disableLoading();
           setSubmitting(false);
         })
-        .catch(() => {
+        .catch((err) => {
+          if (err.response && err.response.status === 400) {
+            setStatus("Registration details are incorrect!");
+          } else if (err.request) {
+            setStatus("Network issues!");
+          } else {
+            setStatus("Something went wrong!");
+          }
+          // console.log("register error : ", err.toJSON());
+          // console.log("register error : ", err);
           setSubmitting(false);
-          setStatus(
-            intl.formatMessage({
-              id: "AUTH.VALIDATION.INVALID_LOGIN",
-            })
-          );
           disableLoading();
         });
     },
   });
-  console.log("formik status", formik.status);
+  // console.log("formik status", formik.status);
 
   return (
     <div className="login-form login-signin" style={{ margin: "1vh 0px" }}>
@@ -361,6 +367,7 @@ function Registration(props) {
             </div>
           )}
           {/* end: Alert */}
+
           {renderStep(formStep, formik, getInputClasses)}
 
           <div className="form-group d-flex flex-wrap flex-center">

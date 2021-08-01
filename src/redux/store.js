@@ -10,10 +10,10 @@ const middleware = [
   ...getDefaultMiddleware({
     immutableCheck: false,
     serializableCheck: false,
-    thunk: true
+    thunk: true,
   }),
-  logger,
-  sagaMiddleware
+  // logger,
+  sagaMiddleware,
 ];
 
 const store = configureStore({
