@@ -11,7 +11,7 @@ export function AsideMenuList({ layoutProps }) {
   const getMenuItemActive = (url, hasSubmenu = false) => {
     return checkIsActive(location, url)
       ? ` ${!hasSubmenu &&
-          "menu-item-active custom-menu-item-ative active"} menu-item-open menu-item-not-hightlighted`
+          "menu-item-active"} menu-item-open menu-item-not-hightlighted`
       : "";
   };
 
@@ -20,56 +20,21 @@ export function AsideMenuList({ layoutProps }) {
       {/* begin::Menu Nav */}
       <ul className={`menu-nav ${layoutProps.ulClasses}`}>
         {/*begin::1 Level*/}
-        {/* <li
+        <li
           className={`menu-item ${getMenuItemActive("/dashboard", false)}`}
           aria-haspopup="true"
         >
           <NavLink className="menu-link" to="/dashboard">
-            <span
-              className="svg-icon menu-icon"
-              style={{ color: "red !important" }}
-            >
+            <span className="svg-icon menu-icon">
               <SVG src={toAbsoluteUrl("/media/svg/icons/Design/Layers.svg")} />
             </span>
-            <span>Dashboard</span>
+            <span className="menu-text">Dashboard</span>
           </NavLink>
-        </li> */}
+        </li>
         {/*end::1 Level*/}
 
-        <li
-          className={`custom-menu-item ${getMenuItemActive(
-            "/dashboard",
-            false
-          )}`}
-        >
-          <NavLink to="/dashboard">
-            <span>
-              <SVG src={toAbsoluteUrl("/media/svg/icons/Design/Layers.svg")} />
-            </span>
-            <span>Dashboard</span>
-          </NavLink>
-        </li>
-
-        <li
-          className={`custom-menu-item ${getMenuItemActive(
-            "/user-profile",
-            false
-          )}`}
-        >
-          <NavLink to="/user-profile">
-            <span>
-              <SVG
-                src={toAbsoluteUrl(
-                  "/media/svg/icons/Communication/Add-user.svg"
-                )}
-              />
-            </span>
-            <span>User Profile</span>
-          </NavLink>
-        </li>
-
         {/*begin::1 Level*/}
-        {/* <li
+        <li
           className={`menu-item ${getMenuItemActive("/user-profile", false)}`}
           aria-haspopup="true"
         >
@@ -81,10 +46,18 @@ export function AsideMenuList({ layoutProps }) {
                 )}
               />
             </span>
-            <span>User Profile</span>
+            <span className="menu-text">User Profile</span>
           </NavLink>
-        </li> */}
+        </li>
         {/*end::1 Level*/}
+
+        {/* Applications */}
+        {/* begin::section */}
+        {/* <li className="menu-section ">
+          <h4 className="menu-text">Applications</h4>
+          <i className="menu-icon flaticon-more-v2"></i>
+        </li> */}
+        {/* end:: section */}
       </ul>
 
       {/* end::Menu Nav */}

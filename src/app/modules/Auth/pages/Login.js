@@ -91,7 +91,16 @@ function Login(props) {
       alignContent="center"
       alignItems="center"
     >
-      <Grid item xs={12} sm={12} md={8} lg={4} xl={4} container>
+      <Grid
+        item
+        xs={12}
+        sm={12}
+        md={6}
+        lg={4}
+        xl={4}
+        container
+        style={{ justifyContent: "center" }}
+      >
         <Paper style={{ padding: "3vw", overflow: "hidden" }}>
           <div>
             {/* begin::Head */}

@@ -198,7 +198,7 @@ function Footer() {
       <Toolbar>
         <Box className={classes.footerRoot} style={{ padding: "10px 0px" }}>
           <Grid container>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} sm={4}>
               <div>
                 <img
                   src={toAbsoluteUrl(
@@ -208,13 +208,18 @@ function Footer() {
                 />
               </div>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid
+              item
+              xs={12}
+              sm={4}
+              style={{ display: "flex", justifyContent: "center" }}
+            >
               <ul
                 style={{
-                  listStyle: "none",
                   display: "flex",
                   flexDirection: "column",
-                  justifyContent: "right",
+                  justifyContent: "center",
+                  maxWidth: "fit-content",
                 }}
               >
                 <li
@@ -283,7 +288,7 @@ function Footer() {
                 </li>
               </ul>
             </Grid>
-            <Grid item xs={12} md={4} style={{ fontSize: "1.5rem" }}>
+            <Grid item xs={12} sm={4} style={{ fontSize: "1.5rem" }}>
               <div>Our Planet Ltd</div>
               <div>Suit 143</div>
               <div>295 High Rd</div>

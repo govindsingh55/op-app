@@ -40,8 +40,12 @@ export function Brand() {
             <button
               className="brand-toggle btn btn-sm px-0"
               id="kt_aside_toggle"
+              style={{ color: "red !important" }}
             >
-              <span className="svg-icon svg-icon-xl">
+              <span
+                className="svg-icon svg-icon-xl"
+                style={{ color: "red !important" }}
+              >
                 <SVG
                   src={toAbsoluteUrl(
                     "/media/svg/icons/Navigation/Angle-double-left.svg"

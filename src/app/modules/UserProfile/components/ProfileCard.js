@@ -26,24 +26,8 @@ export function ProfileCard() {
         >
           <div className="card card-custom card-stretch">
             {/* begin::Body */}
+            {/* <Toolbar /> */}
             <div className="card-body pt-4">
-              {/* begin::Toolbar */}
-              <div className="d-flex justify-content-end">
-                <Dropdown className="dropdown dropdown-inline" alignRight>
-                  <Dropdown.Toggle
-                    className="btn btn-clean btn-hover-light-primary btn-sm btn-icon cursor-pointer"
-                    variant="transparent"
-                    id="dropdown-toggle-top-user-profile"
-                    as={DropdownCustomToggler}
-                  >
-                    <i className="ki ki-bold-more-hor"></i>
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu className="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-                    <DropdownMenu4></DropdownMenu4>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </div>
-              {/* end::Toolbar */}
               {/* begin::User */}
               <div className="d-flex align-items-center">
                 <div className="symbol symbol-60 symbol-xxl-100 mr-5 align-self-start align-self-xxl-center">
@@ -289,6 +273,29 @@ export function ProfileCard() {
           </div>
         </div>
       )}
+    </>
+  );
+}
+function Toolbar() {
+  return (
+    <>
+      {/* begin::Toolbar */}
+      <div className="d-flex justify-content-end">
+        <Dropdown className="dropdown dropdown-inline" alignRight>
+          <Dropdown.Toggle
+            className="btn btn-clean btn-hover-light-primary btn-sm btn-icon cursor-pointer"
+            variant="transparent"
+            id="dropdown-toggle-top-user-profile"
+            as={DropdownCustomToggler}
+          >
+            <i className="ki ki-bold-more-hor"></i>
+          </Dropdown.Toggle>
+          <Dropdown.Menu className="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+            <DropdownMenu4></DropdownMenu4>
+          </Dropdown.Menu>
+        </Dropdown>
+      </div>
+      {/* end::Toolbar */}
     </>
   );
 }
